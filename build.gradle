@@ -6,6 +6,9 @@ repositories {
     mavenCentral()
 }
 
+sourceCompatibility = 21
+targetCompatibility = 21
+
 dependencies {
     compileOnly "org.projectlombok:lombok:1.18.26"
 }
