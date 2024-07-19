@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id "application"
+    id 'io.freefair.lombok' version "8.6"
+}
+
+sourceCompatibility = '21'
+targetCompatibility = '21'
+
+application {
+    mainClassName = "com.example.Main"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
+
+test {
+    useJUnitPlatform()
+}
