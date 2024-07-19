@@ -1,4 +1,4 @@
-package ExpenseTracker;
+package com.example.ExpenseTracker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public class ExpenseTracker {
     }
 
     public void addExpense(Expense expense) {
-        expenses.add(expense);
+        this.expenses.add(expense);
     }
 
     public double getTotalAmount() {

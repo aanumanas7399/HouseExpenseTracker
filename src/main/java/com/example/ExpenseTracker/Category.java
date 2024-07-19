@@ -1,8 +1,6 @@
-package ExpenseTracker;
+package com.example.ExpenseTracker;
 
 import lombok.AllArgsConstructor;
-
-import java.util.List;
 
 @AllArgsConstructor
 public class Category {
