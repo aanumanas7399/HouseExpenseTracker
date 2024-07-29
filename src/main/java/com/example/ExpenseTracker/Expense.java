@@ -12,9 +12,15 @@ public class Expense {
     private Date date;
     private String categoryId;
 
+    public String getCategoryId() {
+        return categoryId;
+    }
+
     public double getAmount(){
         return amount;
     }
+
+    public String getDescription(){return description;}
 
     //isWithinDateRange
 
