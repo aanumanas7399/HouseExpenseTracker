@@ -1,9 +1,8 @@
 package com.example.ExpenseTracker;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ExpenseList {
@@ -30,10 +29,19 @@ public class ExpenseList {
         return expenses.stream().reduce(0.0, (total, it) -> total + it.getAmount(), Double::sum);
     }
 
-    public Expense getHighValueExpenseForCategory(Category category) {
+    public Optional<Expense> getHighValueExpenseForCategory(Category category) {
         List<Expense> expenses = getExpensesByCategory(category);
-        return null;
+        return Optional.of(expenses.stream().max(Comparator.comparingDouble(Expense::getAmount)).get());
+    }
 
+    public List<Expense> getExpensesForCurrentWeek(){
+        LocalDate startOfWeek = LocalDate.now().minusWeeks(1);
+        LocalDate endOfWeek = LocalDate.now().plusWeeks(1);
+
+        Date startDate = Date.from(startOfWeek.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date endDate = Date.from(endOfWeek.atStartOfDay(ZoneId.systemDefault()).toInstant());
+
+        return expenses.stream().filter(expense -> !expense.getDate().before(startDate) && !expense.getDate().after(endDate)).collect(Collectors.toList());
     }
 
 }

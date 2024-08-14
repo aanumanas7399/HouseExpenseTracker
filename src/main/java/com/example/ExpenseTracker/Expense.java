@@ -13,7 +13,7 @@ public class Expense {
     private String description;
     private @Getter double amount;
 
-    private Date date;
+    private @Getter Date date;
     private UUID categoryId;
 
 
@@ -25,15 +25,27 @@ public class Expense {
         this.categoryId = category.getId();
     }
 
+
     //isWithinDateRange
 
     //isExpenseGreaterThan(Amount target)
 
-    boolean isExpenseOfCategory(@NonNull Category category) {
+    public boolean isExpenseOfCategory(@NonNull Category category) {
         return this.categoryId == category.getId();
     }
 
     public String toString() {
         return this.description + ": INR " + this.amount;
     }
+
+
+    public boolean updateExpense(Expense expense, String newDescription, double newAmount) {
+        if (expense != null) {
+            expense.description = newDescription;
+            expense.amount = newAmount;
+            return true;
+        }
+        return false;
+    }
+
 }

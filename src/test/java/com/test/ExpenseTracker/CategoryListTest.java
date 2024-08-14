@@ -2,6 +2,7 @@ package com.test.ExpenseTracker;
 
 import com.example.ExpenseTracker.Category;
 import com.example.ExpenseTracker.CategoryList;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.Optional;
@@ -11,15 +12,41 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class CategoryListTest {
 
+    private CategoryList categoryList;
+    private Optional<Category> foodCategory;
+    private Optional<Category> utilitiesCategory;
+
+    @BeforeMethod
+    public void setUp() {
+        categoryList = new CategoryList();
+        categoryList.addCategory("Food");
+        categoryList.addCategory("Utilities");
+    }
+
     @Test
     public void testAddCategory() {
-        CategoryList categoryList = new CategoryList();
-        categoryList.addCategory("Utilities");
-
-        Optional<Category> category = categoryList.getCategory("Utilities");
-        assertTrue(category.isPresent());
-        assertEquals("Utilities", category.get().getName());
+        utilitiesCategory = categoryList.getCategory("Utilities");
+        assertTrue(utilitiesCategory.isPresent());
+        assertEquals("Utilities", utilitiesCategory.get().getName());
     }
+
+    @Test
+    public void testGetCategoryById() {
+        foodCategory = categoryList.getCategory("Food");
+        Optional<Category> foundCategory = categoryList.getCategory(foodCategory.get().getId());
+        assertTrue(foundCategory.isPresent());
+        assertEquals(foodCategory, foundCategory);
+    }
+
+    @Test
+    public void testGetCategoryByName() {
+        utilitiesCategory = categoryList.getCategory("Utilities");
+        Optional<Category> foundCategory = categoryList.getCategory("Utilities");
+        assertTrue(foundCategory.isPresent());
+        assertEquals(utilitiesCategory, foundCategory);
+    }
+
+
 
 
 }
