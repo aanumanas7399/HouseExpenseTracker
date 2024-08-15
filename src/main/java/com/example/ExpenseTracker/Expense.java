@@ -1,11 +1,9 @@
 package com.example.ExpenseTracker;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NonNull;
-
 import java.util.Date;
 import java.util.UUID;
+
+import lombok.Getter;
+import lombok.NonNull;
 
 public class Expense {
 

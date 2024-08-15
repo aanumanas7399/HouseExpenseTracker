@@ -1,12 +1,12 @@
 package com.test.ExpenseTracker;
 
-import com.example.ExpenseTracker.Category;
-import org.testng.annotations.Test;
-
+import static org.testng.AssertJUnit.*;
 
 import java.util.UUID;
 
-import static org.testng.AssertJUnit.*;
+import org.testng.annotations.Test;
+
+import com.example.ExpenseTracker.Category;
 public class CategoryTest {
 
     @Test

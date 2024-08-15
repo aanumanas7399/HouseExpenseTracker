@@ -1,12 +1,13 @@
 package com.test.ExpenseTracker;
 
-import com.example.ExpenseTracker.Category;
-import com.example.ExpenseTracker.Expense;
-import org.testng.annotations.Test;
+import static org.testng.AssertJUnit.*;
 
 import java.util.*;
 
-import static org.testng.AssertJUnit.*;
+import org.testng.annotations.Test;
+
+import com.example.ExpenseTracker.Category;
+import com.example.ExpenseTracker.Expense;
 
 public class ExpenseTest {
 

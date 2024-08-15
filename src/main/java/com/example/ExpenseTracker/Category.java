@@ -1,9 +1,9 @@
 package com.example.ExpenseTracker;
 
+import java.util.UUID;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
-import java.util.UUID;
 
 @AllArgsConstructor
 public class Category {

@@ -1,14 +1,15 @@
 package com.test.ExpenseTracker;
 
-import com.example.ExpenseTracker.Category;
-import com.example.ExpenseTracker.CategoryList;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 import java.util.Optional;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.example.ExpenseTracker.Category;
+import com.example.ExpenseTracker.CategoryList;
 
 public class CategoryListTest {
 

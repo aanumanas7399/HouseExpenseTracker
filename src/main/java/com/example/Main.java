@@ -1,13 +1,13 @@
 package com.example;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
 import com.example.ExpenseTracker.Category;
 import com.example.ExpenseTracker.CategoryList;
 import com.example.ExpenseTracker.Expense;
 import com.example.ExpenseTracker.ExpenseList;
-
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

@@ -1,17 +1,18 @@
 package com.test.ExpenseTracker;
 
-import com.example.ExpenseTracker.Category;
-import com.example.ExpenseTracker.Expense;
-import com.example.ExpenseTracker.ExpenseList;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.example.ExpenseTracker.Category;
+import com.example.ExpenseTracker.Expense;
+import com.example.ExpenseTracker.ExpenseList;
 
 public class ExpenseListTest {
 
@@ -45,7 +46,6 @@ public class ExpenseListTest {
         assertEquals(250.0,foodExpenses.get(0).getAmount());
         assertEquals(1,clothesExpenses.size());
         assertEquals(1500.0,clothesExpenses.get(0).getAmount());
-
     }
 
     @Test
