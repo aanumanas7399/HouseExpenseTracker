@@ -26,7 +26,7 @@ public class ExpenseList {
 
     public double amountForExpensesByCategory(Category category) {
         List<Expense> expenses = getExpensesByCategory(category);
-        return expenses.stream().reduce(0.0, (total, it) -> total + it.getAmount(), Double::sum);
+        return expenses.stream().mapToDouble(it -> it.getAmount()).sum();
     }
 
     public Optional<Expense> getHighValueExpenseForCategory(Category category) {
