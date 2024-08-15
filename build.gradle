@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id "application"
     id 'io.freefair.lombok' version "8.6"
+    id 'com.diffplug.spotless' version "6.25.0"
 }
 
 sourceCompatibility = '21'
@@ -21,6 +22,20 @@ dependencies {
 
 test {
     useTestNG()
+}
+
+//-----------------------------------------------------SPOTLESS-------------------------------------------------------
+spotless {
+    enforceCheck false
+
+    java {
+        targetExclude('**/*generated*/**')
+        removeUnusedImports()
+        importOrder('java', 'javax', 'jakarta', 'io', 'org', 'lombok', 'com', 'com.deere')
+        trimTrailingWhitespace()
+        endWithNewline()
+        indentWithSpaces()
+    }
 }
 
 
