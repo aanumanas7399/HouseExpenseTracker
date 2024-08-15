@@ -16,7 +16,7 @@ public class ExpenseTest {
         Category category = new Category(UUID.randomUUID(), "Food");
         Expense expense = new Expense("Lunch", 150.0, new Date(), category);
 
-        assertTrue(expense.isExpenseOfCategory(category));
+        assertTrue(expense.isOfCategory(category));
     }
 
     @Test
@@ -45,6 +45,6 @@ public class ExpenseTest {
         Category category2 = new Category(UUID.randomUUID(), "Entertainment");
         Expense expense = new Expense("Movie Ticket", 500.0, new Date(), category2);
 
-        assertFalse(expense.isExpenseOfCategory(category1));
+        assertFalse(expense.isOfCategory(category1));
     }
 }

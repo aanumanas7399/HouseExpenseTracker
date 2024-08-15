@@ -20,7 +20,7 @@ public class ExpenseList {
 
     public List<Expense> getExpensesByCategory(Category category) {
         return expenses.stream()
-                .filter(expense -> expense.isExpenseOfCategory(category))
+                .filter(expense -> expense.isOfCategory(category))
                 .collect(Collectors.toList());
     }
 

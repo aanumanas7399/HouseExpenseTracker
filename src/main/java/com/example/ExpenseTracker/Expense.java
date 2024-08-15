@@ -28,7 +28,7 @@ public class Expense {
 
     //isExpenseGreaterThan(Amount target)
 
-    public boolean isExpenseOfCategory(@NonNull Category category) {
+    public boolean isOfCategory(@NonNull Category category) {
         return this.categoryId == category.getId();
     }
 
