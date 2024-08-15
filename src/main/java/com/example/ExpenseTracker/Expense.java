@@ -36,6 +36,10 @@ public class Expense {
         return this.description + ": INR " + this.amount;
     }
 
+    public void updateExpense(String newDescription, double newAmount) {
+        description = newDescription;
+        amount = newAmount;
+    }
 
     public boolean updateExpense(Expense expense, String newDescription, double newAmount) {
         if (expense != null) {
