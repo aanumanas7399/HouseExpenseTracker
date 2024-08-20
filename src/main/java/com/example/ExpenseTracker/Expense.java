@@ -41,13 +41,4 @@ public class Expense {
         amount = newAmount;
     }
 
-    public boolean updateExpense(Expense expense, String newDescription, double newAmount) {
-        if (expense != null) {
-            expense.description = newDescription;
-            expense.amount = newAmount;
-            return true;
-        }
-        return false;
-    }
-
 }

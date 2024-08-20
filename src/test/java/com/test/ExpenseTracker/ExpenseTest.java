@@ -23,10 +23,7 @@ public class ExpenseTest {
     public void testUpdateExpense() {
         Category category = new Category(UUID.randomUUID(), "Utilities");
         Expense expense = new Expense("Electricity Bill", 3000.0, new Date(), category);
-
-        boolean isUpdated = expense.updateExpense(expense, "Water Bill", 2000.0);
-
-        assertTrue(isUpdated);
+        expense.updateExpense("Water Bill", 2000.0);
         assertEquals("Water Bill", expense.toString().split(":")[0]);
         assertEquals(2000.0, expense.getAmount());
     }
